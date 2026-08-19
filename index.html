@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Полный аудит инстаграма с помощью ИИ</title>
-<meta name="description" content="Аудит инстаграма не делается одним промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
+<meta name="description" content="Аудит инстаграма не делается одним только промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
 <link rel="canonical" href="https://magnet-insta-audit.vercel.app/">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="kris.usti">
 <meta property="og:url" content="https://magnet-insta-audit.vercel.app/">
 <meta property="og:title" content="Полный аудит инстаграма с помощью ИИ">
-<meta property="og:description" content="Аудит инстаграма не делается одним промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
+<meta property="og:description" content="Аудит инстаграма не делается одним только промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
 <meta property="og:image" content="https://magnet-insta-audit.vercel.app/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Полный аудит инстаграма с помощью ИИ">
-<meta name="twitter:description" content="Аудит инстаграма не делается одним промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
+<meta name="twitter:description" content="Аудит инстаграма не делается одним только промптом. Каталог из 32 разборов: готовый промпт, вопрос, на который он отвечает, и решение по ответу. Плюс подготовка данных, на которых разборы вообще имеют смысл.">
 <meta name="twitter:image" content="https://magnet-insta-audit.vercel.app/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23242424%27/%3E%3Cg stroke=%27%23A6DCEC%27 stroke-width=%273%27 stroke-linecap=%27round%27%3E%3Cpath d=%27M16 7v18M8.2 11.5l15.6 9M23.8 11.5l-15.6 9%27/%3E%3C/g%3E%3C/svg%3E">
 <style>
@@ -295,29 +295,6 @@ a.nm{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px s
 
 </style>
 <style>
-/* --- маршруты --- */
-.routes{display:grid;gap:10px;margin:22px 0 26px}
-.rt{border:1px solid var(--edge);background:var(--paper);padding:16px 16px 14px}
-.rt-h{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
-.rt-n{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--mark-text);white-space:nowrap}
-.rt-t{font-weight:700;font-size:17px;color:var(--ink)}
-.rt p{margin:0 0 10px;font-size:15px;color:var(--ink-body)}
-.rt-go{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--mark-text);background:none;border:0;padding:0;
-  cursor:pointer}
-.rt-go span{margin-left:4px}
-.rt-go:hover{color:var(--ink)}
-
-/* --- фильтры каталога --- */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 10px}
-.chip{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;padding:9px 13px;border:1px solid var(--edge);
-  background:var(--paper);color:var(--ink);cursor:pointer}
-.chip.on{background:var(--edge);color:var(--paper)}
-.catcount{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--ink-soft);margin:0 0 24px}
-
 /* --- группы --- */
 .grp{margin:0 0 30px}
 .grp[hidden]{display:none}
@@ -349,10 +326,6 @@ details.fold summary::-webkit-details-marker{display:none}
 details.fold summary::after{content:" +";font-weight:700}
 details.fold[open] summary::after{content:" \2212"}
 details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
-
-@media (min-width:720px){
-  .routes{grid-template-columns:repeat(3,1fr)}
-}
 </style>
 </head>
 <body>
@@ -363,7 +336,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <span>Аудит инстаграма</span>
     <span class="hero-band hero-band--ink">без выдуманных цифр</span>
   </h1>
-  <p class="lede">Аудит не делается одним промптом. Он делается на данных, которые у тебя реально есть, и на срезах, каждый из которых отвечает на один вопрос</p>
+  <p class="lede">Аудит не делается одним только промптом. Нужно подготовить данные, критерии, инструкции, инструменты и задать ИИ ограничения</p>
   <p class="third">Подготовка, рабочее место в Claude и каталог из 32 разборов с готовыми промптами</p>
  </div>
 </section>
@@ -376,7 +349,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <p>А еще озвученные инструменты имеют катастрофические ограничения, так что... мне стремно было бы таким делиться.</p>
   <p>Подготовила подробную инструкцию, как сделать полноценный аудит профиля — путь, который я прохожу сама. Дальше честно скажу, где он заканчивается.</p>
   <p class="last">Скорее читай ниже, сохраняй и отправляй друзьям :)</p>
-  <a class="scrollhint" href="#start">Начать <span class="arw">&darr;</span></a>
+  <a class="scrollhint" href="#prep">Начать <span class="arw">&darr;</span></a>
  </div>
 </section>
 
@@ -384,92 +357,30 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
  <div class="wrap">
   <div class="panel">
     <div class="cap">Почему мне можно доверять</div>
-    <p>Полтора года работаю с языковыми моделями каждый день: собираю на них рабочие процессы, прототипы и контент, часть задач веду через ИИ-агентов. Не программист: бакалавр журфака, 5 лет проработала ассистентом в международных компаниях.</p>
-    <p class="pull">Здесь нет ничего из обзоров. Это мой собственный маршрут аудита, снятый с моих же данных.</p>
-  </div>
- </div>
-</section>
-
-<section class="chapter chapter--paper-2" id="start" data-n="03" data-title="С чего начать">
- <div class="wrap">
-  <div class="shead">
-    <span class="section-label"><span>03</span> Маршрут</span>
-    <h2>С чего начать</h2>
-  </div>
-<p>Этот гайд не читают подряд. Внизу каталог: 32 разбора, каждый — готовый промпт, вопрос, на который он отвечает, и инструкция, что делать с ответом. Открываешь нужный, копируешь, вставляешь в свой чат.</p>
-  <p>Перед каталогом — инструкция: что подготовить, чтобы разборы строились на твоих данных, а не на догадках модели. Это делается один раз.</p>
-  <p>Если нужен аудит целиком — со всеми срезами, конкурентами, разбором закономерностей, объяснением, почему один формат залетает, а другой нет, — иди маршрутом «с рынком» и дочитай до раздела о том, что я могу собрать под твой запрос или научить собирать самостоятельно.</p>
-
-  <div class="routes">
-    <article class="rt" data-route="fast">
-      <div class="rt-h"><span class="rt-n">около часа</span><span class="rt-t">Быстрый</span></div>
-      <p>почему упали охваты и что работает лучше остального</p>
-      <button class="rt-go" type="button" data-route-go="fast">показать разборы этого маршрута <span>&rarr;</span></button>
-    </article>
-    <article class="rt" data-route="full">
-      <div class="rt-h"><span class="rt-n">вечер</span><span class="rt-t">Полный</span></div>
-      <p>картина своего аккаунта целиком и новая упаковка профиля</p>
-      <button class="rt-go" type="button" data-route-go="full">показать разборы этого маршрута <span>&rarr;</span></button>
-    </article>
-    <article class="rt" data-route="market">
-      <div class="rt-h"><span class="rt-n">два вечера</span><span class="rt-t">С рынком</span></div>
-      <p>сравнение с конкурентами, отчет и план на 14 дней</p>
-      <button class="rt-go" type="button" data-route-go="market">показать разборы этого маршрута <span>&rarr;</span></button>
-    </article>
-  </div>
-
-  <p>Это главное отличие от инструкций, где дают строчку «проанализируй мою статистику». Такая строчка не ставит модели ни задачу, ни границы, поэтому ответ получается красивым и бесполезным. Каждый промпт здесь собран как единый контракт из шести полей.</p>
-
-  <div class="fields">
-    <p class="fcap">Шесть полей каждого промпта</p>
-    <ul>
-        <li><b>Задача</b><span>называет одно конкретное действие. Без нее модель сама решает, что важно, и уходит в общие рассуждения.</span></li>
-        <li><b>Данные</b><span>указывают, из какого файла и какой колонки брать. Без них модель берет то, что попадется, и мешает периоды.</span></li>
-        <li><b>Метод</b><span>задает способ счета: медиана, доли, группировка. Без него модель считает по среднему, и одна залетевшая публикация ломает вывод.</span></li>
-        <li><b>Ограничения</b><span>запрещают достраивать, оценивать и советовать вообще. Без них модель заполняет пробелы правдоподобными числами.</span></li>
-        <li><b>Формат вывода</b><span>описывает таблицу и число строк в ответе. Без него ответ приходит сплошным текстом, из которого ничего не вытащить.</span></li>
-        <li><b>Если данных нет</b><span>велит сказать об этом вслух. Без этой строки модель молча заменяет недостающую колонку похожей.</span></li>
+    <p>Более 2 лет работаю с ИИ каждый день: собираю на них рабочие процессы, прототипы продуктов, сайты, кастомные продукты, ботов и многое другое для клиентов из США, Австралии и Канады.</p>
+    <p>За последние месяцы выстроила ИИ-систему для работы над блогом, с меня только правки и согласование:</p>
+    <ul class="rules">
+      <li>поиск виральных рилс и каруселей;</li>
+      <li>еженедельные дайджесты идей;</li>
+      <li>аудит контента конкурентов;</li>
+      <li>разбор виральных сценариев и выявление паттернов;</li>
+      <li>монтаж видео;</li>
+      <li>дизайн каруселей;</li>
+      <li>автопостинг в Threads;</li>
+      <li>автопостинг рубрик в ТГ;</li>
+      <li>лидмагниты, сайты, КП;</li>
+      <li>сценарии, хук-заголовки;</li>
+      <li>воронки, стратегия, аналитика.</li>
     </ul>
-    <p class="tail">Роль исполнителя и общие правила счета вынесены один раз в инструкцию проекта — она действует во всех чатах сразу. Поэтому сами промпты такие короткие: половина контракта уже задана.</p>
-  </div>
-
-  <p class="rlead">Два правила по всему гайду:</p>
-  <ul class="rules">
-    <li>Порядок не ломай. Аудит — это последовательность: собрать данные, задать рабочее место, собрать срезы, свести все в отчет и план. Каждая часть опирается на предыдущую.</li>
-    <li>Один срез — один чат. Каждый разбор из каталога открывается отдельным чатом внутри одного проекта. Ответ не тонет в километровой переписке, а проект все равно помнит выводы предыдущих чатов.</li>
-  </ul>
- </div>
-</section>
-
-<section class="chapter chapter--paper" id="limits" data-n="04" data-title="Граница данных">
- <div class="wrap">
-  <div class="shead">
-    <span class="section-label"><span>04</span> Данные</span>
-    <h2>Граница данных</h2>
-    <p>Что вообще можно узнать, а что придется выдумать.</p>
-  </div>
-<p>Аудит держится не на промпте, а на данных. Посмотри, что вообще будет у тебя в руках: ни один запрос за эту границу не выйдет.</p>
-
-  <div class="fields">
-    <p class="fcap">Что есть и чего нет</p>
-    <ul>
-        <li><b>Про свой аккаунт</b><span>выгрузка из Business Suite отдает по каждой публикации охват, показы, реакции, сохранения, репосты, комментарии, подписки с публикации, время просмотра у рилсов, дату и тип. Демография аудитории — только на экране, скриншотом.</span></li>
-        <li><b>Про чужие аккаунты</b><span>лайки, комментарии и их текст, просмотры рилсов, длительность, дату, подпись, хештеги, описание профиля, число подписчиков. Это все, что Instagram отдает наружу.</span></li>
-        <li><b>Чего нет ни у кого</b><span>охваты конкурента, его сохранения, репосты, подписки с конкретной публикации, его демография. Если промпт просит ИИ определить, какие рилсы конкурента приносят продажи или какой у него ER по охвату, — этих чисел не существует в открытом доступе, и модель их придумает.</span></li>
-        <li><b>Чего нет в гайде</b><span>разбора того, что говорят в рилсах и что написано на слайдах каруселей. Это озвучка и картинки, их нужно расшифровывать отдельно; здесь мы работаем с цифрами и текстом подписей.</span></li>
-    </ul>
-  </div>
-
-  <div class="check">
-    <p>Дальше в промптах встречается строка «если данных нет». Это не осторожность, а защита от красиво выдуманного ответа: модель обязана назвать пробел, а не заполнить его.</p>
+    <p class="pull">Все, о чем я говорю, может реализовать кто угодно. Я не разработчик — я просто научилась навыку работы с ИИ.</p>
   </div>
  </div>
 </section>
 
-<section class="chapter chapter--paper-2" id="prep" data-n="05" data-title="Подготовка">
+<section class="chapter chapter--paper-2" id="prep" data-n="03" data-title="Подготовка">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>05</span> Подготовка</span>
+    <span class="section-label"><span>03</span> Подготовка</span>
     <h2>Подготовка</h2>
     <p>Пять шагов, один раз. Дальше все разборы работают на этих файлах.</p>
   </div>
@@ -483,7 +394,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <article class="step">
     <div class="head"><span class="n">1</span><h3>Опиши свой блог</h3></div>
     <div class="rows">
-      <div class="row"><span class="k">Зачем</span><span class="v">без этого модель не понимает, кому ты пишешь, и оценивает контент вообще, а не твой.</span></div>
+      <div class="row"><span class="k">Зачем</span><span class="v">без этого модель не понимает, кому ты пишешь, и оценивает контент в целом, а не твой.</span></div>
       <div class="row"><span class="k">Что сделать</span><span class="v">заполни шаблон ниже и сохрани текстовым файлом — он пойдет в проект.</span></div>
     </div>
     <div class="keybox">
@@ -537,7 +448,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <div class="head"><span class="n">3</span><h3>Сними скриншоты</h3></div>
     <div class="rows">
       <div class="row"><span class="k">Что снять</span><span class="v">экран демографии аудитории и свой профиль целиком: аватар, имя, описание, ссылку, закрепленные, обложки актуальных, первый экран ленты.</span></div>
-      <div class="row"><span class="k">Зачем</span><span class="v">демография в выгрузку не попадает, а упаковку профиля иначе не разобрать: это картинка, не таблица.</span></div>
+      <div class="row"><span class="k">Зачем</span><span class="v">демография в выгрузку не попадает, а упаковку профиля иначе не разобрать: это картинка, а не таблица.</span></div>
     </div>
     <div class="stepdone"><label><input type="checkbox" data-step="p3"><span class="bx"></span><span class="dl">сделано</span></label></div>
   </article>
@@ -559,16 +470,16 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
       <div class="row"><span class="k">Сколько это стоит</span><span class="v">на бесплатном тарифе дают <b>5 долларов кредитов в месяц</b>. Сборщик стоит <b>2,7 доллара за 1 000 собранных элементов</b> — то есть бесплатного лимита хватает примерно на 1 800 публикаций. 30 аккаунтов по 50 публикаций — это 1 500.</span></div>
       <div class="row"><span class="k">Что будет в файле</span><span class="v">лайки, комментарии и их текст, просмотры рилсов, длительность, дата, подпись, хештеги, описание профиля, число подписчиков. Охватов и сохранений там нет и не будет.</span></div>
     </div>
-    <p class="tail">Проверено 18.08.2026.</p>
+    <p class="tail">Проверено 19.08.2026.</p>
     <div class="stepdone"><label><input type="checkbox" data-step="p5"><span class="bx"></span><span class="dl">сделано</span></label></div>
   </article>
  </div>
 </section>
 
-<section class="chapter chapter--paper" id="workspace" data-n="06" data-title="Рабочее место в Claude">
+<section class="chapter chapter--paper" id="workspace" data-n="04" data-title="Рабочее место в Claude">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>06</span> Проект</span>
+    <span class="section-label"><span>04</span> Проект</span>
     <h2>Рабочее место <span class="fancy">в Claude</span></h2>
     <p>Один проект, куда сложены файлы и записаны правила счета.</p>
   </div>
@@ -613,10 +524,10 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
  </div>
 </section>
 
-<section class="chapter chapter--paper-2" id="zero" data-n="07" data-title="Промпт-ноль">
+<section class="chapter chapter--paper-2" id="zero" data-n="05" data-title="Промпт-ноль">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>07</span> Проверка</span>
+    <span class="section-label"><span>05</span> Проверка</span>
     <h2>Промпт-ноль</h2>
     <p>Он ничего не анализирует. Он показывает, какие колонки у тебя есть.</p>
   </div>
@@ -647,27 +558,36 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
  </div>
 </section>
 
-<section class="chapter chapter--paper" id="catalog" data-n="08" data-title="Каталог: 32 разбора">
+<section class="chapter chapter--paper" id="catalog" data-n="06" data-title="Каталог: 32 разбора">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>08</span> Каталог</span>
+    <span class="section-label"><span>06</span> Каталог</span>
     <h2>Каталог: <span class="fancy">32 разбора</span></h2>
     <p>Один разбор — один чат. Порядок внутри раздела свободный.</p>
   </div>
-<p>32 разбора. У каждого — вопрос, на который он отвечает, что нужно на входе, готовый промпт и решение, которое из ответа следует. Открывай по одному, каждый в своем чате.</p>
+<p>Этот гайд не читают подряд. Каталог ниже — 32 разбора, каждый — готовый промпт, вопрос, на который он отвечает, и инструкция, что делать с ответом. Открываешь нужный, копируешь, вставляешь в свой чат.</p>
 
-  <div class="chips">
-    <button class="chip on" type="button" data-filter="all">все 32</button>
-    <button class="chip" type="button" data-filter="fast">быстрый</button>
-    <button class="chip" type="button" data-filter="full">полный</button>
-    <button class="chip" type="button" data-filter="market">с рынком</button>
+  <p>Это главное отличие от инструкций, где дают строчку «проанализируй мою статистику». Такая строчка не ставит модели ни задачу, ни границы, поэтому ответ получается красивым и бесполезным. Каждый промпт здесь собран как единый контракт из шести полей.</p>
+
+  <div class="fields">
+    <p class="fcap">Шесть полей каждого промпта</p>
+    <ul>
+        <li><b>Задача</b><span>называет одно конкретное действие. Без нее модель сама решает, что важно, и уходит в общие рассуждения.</span></li>
+        <li><b>Данные</b><span>указывают, из какого файла и какой колонки брать. Без них модель берет то, что попадется, и мешает периоды.</span></li>
+        <li><b>Метод</b><span>задает способ счета: медиана, доли, группировка. Без него модель считает по среднему, и одна залетевшая публикация ломает вывод.</span></li>
+        <li><b>Ограничения</b><span>запрещают достраивать, оценивать и советовать вообще. Без них модель заполняет пробелы правдоподобными числами.</span></li>
+        <li><b>Формат вывода</b><span>описывает таблицу и число строк в ответе. Без него ответ приходит сплошным текстом, из которого ничего не вытащить.</span></li>
+        <li><b>Если данных нет</b><span>велит сказать об этом вслух. Без этой строки модель молча заменяет недостающую колонку похожей.</span></li>
+    </ul>
+    <p class="tail">Роль исполнителя и общие правила счета вынесены один раз в инструкцию проекта — она действует во всех чатах сразу. Поэтому сами промпты такие короткие: половина контракта уже задана.</p>
   </div>
-  <p class="catcount" id="catcount">показано 32 из 32</p>
+
+  <p>32 разбора. У каждого — вопрос, на который он отвечает, что нужно на входе, готовый промпт и решение, которое из ответа следует. Открывай по одному, каждый в своем чате.</p>
 
   <section class="grp" data-grp="07">
     <div class="grp-h"><span class="grp-n">7.1–15</span><h3>Срезы по своему аккаунту</h3><span class="grp-c">15</span></div>
     <div class="grp-b">
-    <article class="qc" data-id="7.1" data-routes="fast full market">
+    <article class="qc" data-id="7.1">
     <div class="qc-h"><span class="qc-n">7.1</span><h3>Почему упали охваты</h3></div>
     <p class="qc-q">где сломалось — в графике или в содержании.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -693,7 +613,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>упало число публикаций — вопрос к графику; упал охват на публикацию — к содержанию. Это разные починки, и делать их одновременно бессмысленно: сначала та, где вклад больше.</p></details>
   </article>
 
-    <article class="qc" data-id="7.2" data-routes="fast full market">
+    <article class="qc" data-id="7.2">
     <div class="qc-h"><span class="qc-n">7.2</span><h3>Что сохраняют, а не просто лайкают</h3></div>
     <p class="qc-q">какая польза заставляет вернуться.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -720,7 +640,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>тип пользы из верхних пяти — твой формат, его и масштабируй. Нижние пять сравни с верхними по теме: часто разница не в теме, а в том, можно ли ответ применить сразу.</p></details>
   </article>
 
-    <article class="qc" data-id="7.3" data-routes="full market">
+    <article class="qc" data-id="7.3">
     <div class="qc-h"><span class="qc-n">7.3</span><h3>Что выносят за пределы твоей аудитории</h3></div>
     <p class="qc-q">какие публикации работают на новых людей.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -743,7 +663,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>репост — единственный органический способ выйти за свою аудиторию. Публикация в обоих списках — твой самый рабочий формат: ее сохраняют для себя и передают другим.</p></details>
   </article>
 
-    <article class="qc" data-id="7.4" data-routes="fast full market">
+    <article class="qc" data-id="7.4">
     <div class="qc-h"><span class="qc-n">7.4</span><h3>Что реально приводит подписчиков</h3></div>
     <p class="qc-q">цена подписчика в охвате.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -766,7 +686,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>то, что собирает охват, и то, что приводит подписчиков, часто — разные публикации. Верхние здесь — кандидаты в закрепленные, ими занимается срез 9.3.</p></details>
   </article>
 
-    <article class="qc" data-id="7.5" data-routes="full market">
+    <article class="qc" data-id="7.5">
     <div class="qc-h"><span class="qc-n">7.5</span><h3>Где обрывается воронка публикации</h3></div>
     <p class="qc-q">на каком шаге теряются люди.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -791,7 +711,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>потеря на первом шаге — вопрос к хуку и обложке; на последнем — к профилю, а не к контенту. Второе чинится в разборах 9.1–9.3, а не новыми публикациями.</p></details>
   </article>
 
-    <article class="qc" data-id="7.6" data-routes="full market">
+    <article class="qc" data-id="7.6">
     <div class="qc-h"><span class="qc-n">7.6</span><h3>Формат против формата</h3></div>
     <p class="qc-q">чем стоит заниматься, а что съедает время впустую.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -812,10 +732,10 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
 
 Ограничения: тип с менее чем 3 публикациями помечай как ненадежный.</pre>
   </div>
-    <details class="fold"><summary>решение по ответу</summary><p>медиана говорит, что работает стабильно, а доля в общем охвате — на что уходят твои силы. Расхождение между ними и есть ответ: формат с высокой медианой и низкой долей ты недоделываешь.</p></details>
+    <details class="fold"><summary>решение по ответу</summary><p>медиана говорит, что работает стабильно, а доля в общем охвате — на что уходят твои силы. Расхождение между ними и есть ответ: формат с высокой медианой и низкой долей ты недоиспользуешь.</p></details>
   </article>
 
-    <article class="qc" data-id="7.7" data-routes="full market">
+    <article class="qc" data-id="7.7">
     <div class="qc-h"><span class="qc-n">7.7</span><h3>Система или везение</h3></div>
     <p class="qc-q">держится ли аккаунт на одной залетевшей публикации.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -836,7 +756,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>если топ-1 дает больше трети всего охвата, системы пока нет, есть одна удачная публикация. Это меняет план: сначала повторяемость, потом масштаб.</p></details>
   </article>
 
-    <article class="qc" data-id="7.8" data-routes="full market">
+    <article class="qc" data-id="7.8">
     <div class="qc-h"><span class="qc-n">7.8</span><h3>День и час</h3></div>
     <p class="qc-q">расписание, подтвержденное твоими цифрами.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -857,10 +777,10 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
 Не предлагай «лучшее время постинга» из общих знаний — только
 из этой таблицы.</pre>
   </div>
-    <details class="fold"><summary>решение по ответу</summary><p>если разброс между лучшей и худшей группой меньше 20 процентов, время публикации не твоя проблема — не трогай его и займись содержанием.</p></details>
+    <details class="fold"><summary>решение по ответу</summary><p>если разброс между лучшей и худшей группой меньше 20 процентов, время публикации — не твоя проблема — не трогай его и займись содержанием.</p></details>
   </article>
 
-    <article class="qc" data-id="7.9" data-routes="full market">
+    <article class="qc" data-id="7.9">
     <div class="qc-h"><span class="qc-n">7.9</span><h3>Каденс</h3></div>
     <p class="qc-q">наказывает ли площадка за паузы.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -884,7 +804,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>связь есть — составь график и придерживайся его; связи нет — перестань винить себя за пропущенные дни и верни это время в подготовку контента.</p></details>
   </article>
 
-    <article class="qc" data-id="7.10" data-routes="full market">
+    <article class="qc" data-id="7.10">
     <div class="qc-h"><span class="qc-n">7.10</span><h3>Подпись</h3></div>
     <p class="qc-q">окупается ли длинный текст под публикацией.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -910,7 +830,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это проверка одной гипотезы. Если длинная подпись не дает разницы, ты только что вернула себе часы.</p></details>
   </article>
 
-    <article class="qc" data-id="7.11" data-routes="full market">
+    <article class="qc" data-id="7.11">
     <div class="qc-h"><span class="qc-n">7.11</span><h3>Хештеги</h3></div>
     <p class="qc-q">стоит ли на них тратить внимание.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -933,7 +853,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>разница в пределах 10 процентов — шум. Хештеги не то место, где лежит твой рост.</p></details>
   </article>
 
-    <article class="qc" data-id="7.12" data-routes="full market">
+    <article class="qc" data-id="7.12">
     <div class="qc-h"><span class="qc-n">7.12</span><h3>Сторис</h3></div>
     <p class="qc-q">где выходят из цепочки.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -957,7 +877,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>смотри не на первую сторис, а на разницу между первой и последней. Именно там видно, дочитывают тебя или нет.</p></details>
   </article>
 
-    <article class="qc" data-id="7.13" data-routes="full market">
+    <article class="qc" data-id="7.13">
     <div class="qc-h"><span class="qc-n">7.13</span><h3>Кому ты на самом деле пишешь</h3></div>
     <p class="qc-q">расхождение между твоим адресатом и твоей аудиторией.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -982,7 +902,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>расхождение объясняет низкую конверсию лучше, чем любые алгоритмы: ты пишешь не тем, кто тебя читает. Дальше выбор — менять адресата в текстах или менять аудиторию новыми темами.</p></details>
   </article>
 
-    <article class="qc" data-id="7.14" data-routes="full market">
+    <article class="qc" data-id="7.14">
     <div class="qc-h"><span class="qc-n">7.14</span><h3>Темы</h3></div>
     <p class="qc-q">твои сильные и слабые темы, без догадок.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -1007,7 +927,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это твоя контент-матрица, собранная из фактов, а не из чужого шаблона. Она понадобится в срезе 8.11 и в плане на 14 дней.</p></details>
   </article>
 
-    <article class="qc" data-id="7.15" data-routes="full market">
+    <article class="qc" data-id="7.15">
     <div class="qc-h"><span class="qc-n">7.15</span><h3>Профиль на входе</h3></div>
     <p class="qc-q">считывается ли аккаунт за 3 секунды.</p>
     <p class="qc-d"><b>Нужно на входе:</b> своя выгрузка</p>
@@ -1037,7 +957,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <section class="grp" data-grp="08">
     <div class="grp-h"><span class="grp-n">8.1–12</span><h3>Срезы по конкурентам</h3><span class="grp-c">12</span></div>
     <div class="grp-b">
-    <article class="qc" data-id="8.1" data-routes="market">
+    <article class="qc" data-id="8.1">
     <div class="qc-h"><span class="qc-n">8.1</span><h3>Что собралось</h3></div>
     <p class="qc-q">с чем ты вообще работаешь.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1057,7 +977,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>пустые поля — это границы всех следующих срезов раздела. Промпт, который просит то, чего нет, вернет выдумку.</p></details>
   </article>
 
-    <article class="qc" data-id="8.2" data-routes="market">
+    <article class="qc" data-id="8.2">
     <div class="qc-h"><span class="qc-n">8.2</span><h3>Кто на самом деле живой</h3></div>
     <p class="qc-q">кто из списка настоящий ориентир, а кто просто крупный.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1080,7 +1000,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>крупный аккаунт с низким процентом — не конкурент, а витрина. Ориентируйся на средних по размеру с высоким процентом: их механики повторяемы на твоем размере.</p></details>
   </article>
 
-    <article class="qc" data-id="8.3" data-routes="market">
+    <article class="qc" data-id="8.3">
     <div class="qc-h"><span class="qc-n">8.3</span><h3>Кто собирает заявки, а не лайки</h3></div>
     <p class="qc-q">у кого в нише работает лид-магнит.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1103,7 +1023,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это почти всегда механика с кодовым словом в комментариях. Смотри, какое слово просят написать и что обещают взамен — это готовая схема лид-магнита, которую можно повторить со своим материалом.</p></details>
   </article>
 
-    <article class="qc" data-id="8.4" data-routes="market">
+    <article class="qc" data-id="8.4">
     <div class="qc-h"><span class="qc-n">8.4</span><h3>Что спрашивают их аудитории</h3></div>
     <p class="qc-q">какие темы у рынка не закрыты.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1124,7 +1044,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это готовый список тем. Люди сами написали, чего им не хватает, — дальше это переносится в план на 14 дней.</p></details>
   </article>
 
-    <article class="qc" data-id="8.5" data-routes="market">
+    <article class="qc" data-id="8.5">
     <div class="qc-h"><span class="qc-n">8.5</span><h3>Выбросы</h3></div>
     <p class="qc-q">что в нише срабатывает сильнее обычного.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1147,7 +1067,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>сравнение аккаунта с самим собой честнее, чем сравнение аккаунтов между собой. Общее у выбросов — это и есть механика рынка.</p></details>
   </article>
 
-    <article class="qc" data-id="8.6" data-routes="market">
+    <article class="qc" data-id="8.6">
     <div class="qc-h"><span class="qc-n">8.6</span><h3>Банк первых строк</h3></div>
     <p class="qc-q">как устроены фразы, с которых начинаются сильные публикации.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1169,7 +1089,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это твой склад формулировок. Берется устройство фразы, а не тема: чужую тему повторять незачем, а конструкция работает на любой.</p></details>
   </article>
 
-    <article class="qc" data-id="8.7" data-routes="market">
+    <article class="qc" data-id="8.7">
     <div class="qc-h"><span class="qc-n">8.7</span><h3>Призывы к действию</h3></div>
     <p class="qc-q">о чем в нише просят читателя и что из этого работает.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1192,7 +1112,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>контрольная группа здесь важнее самих призывов: если публикации без призыва собирают столько же, дело не в формулировке, а в теме.</p></details>
   </article>
 
-    <article class="qc" data-id="8.8" data-routes="market">
+    <article class="qc" data-id="8.8">
     <div class="qc-h"><span class="qc-n">8.8</span><h3>Длина рилса и просмотры</h3></div>
     <p class="qc-q">рабочая длина ролика в твоей нише.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1214,7 +1134,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>у каждой ниши своя рабочая длина, и она редко совпадает с общими советами из интернета.</p></details>
   </article>
 
-    <article class="qc" data-id="8.9" data-routes="market">
+    <article class="qc" data-id="8.9">
     <div class="qc-h"><span class="qc-n">8.9</span><h3>Календарь рынка</h3></div>
     <p class="qc-q">когда в нише густо, а когда пусто.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1235,7 +1155,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>интересны не только пиковые часы, но и пустые — там меньше конкуренции за внимание. Проверяй их против своего среза 7.8: если у тебя там уже неплохо, это дешевый рост.</p></details>
   </article>
 
-    <article class="qc" data-id="8.10" data-routes="market">
+    <article class="qc" data-id="8.10">
     <div class="qc-h"><span class="qc-n">8.10</span><h3>Упаковка лидеров</h3></div>
     <p class="qc-q">как устроены описания профилей, которые работают.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1256,7 +1176,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это материал для разборов 9.1–9.3. Смотри не на слова, а на порядок элементов: что стоит первым и что уступило место.</p></details>
   </article>
 
-    <article class="qc" data-id="8.11" data-routes="market">
+    <article class="qc" data-id="8.11">
     <div class="qc-h"><span class="qc-n">8.11</span><h3>Чего у тебя нет</h3></div>
     <p class="qc-q">где в твоем контенте дыра относительно рынка.</p>
     <p class="qc-d"><b>Нужно на входе:</b> конкуренты через Apify</p>
@@ -1278,7 +1198,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>это единственный честный способ найти пробел — через сравнение своих же разборов, а не через вопрос «какие темы сейчас в тренде».</p></details>
   </article>
 
-    <article class="qc" data-id="8.12" data-routes="market">
+    <article class="qc" data-id="8.12">
     <div class="qc-h"><span class="qc-n">8.12</span><h3>Кто вырос</h3></div>
     <p class="qc-q">кто в нише растет, а кто стоит.</p>
     <p class="qc-q">За один запуск этого не увидеть: у выгрузки нет истории подписчиков. Сохрани файл, повтори сбор через 3–4 недели и сравни два файла.</p>
@@ -1306,7 +1226,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <section class="grp" data-grp="09">
     <div class="grp-h"><span class="grp-n">9.1–3</span><h3>Упаковка профиля</h3><span class="grp-c">3</span></div>
     <div class="grp-b">
-    <article class="qc" data-id="9.1" data-routes="full market">
+    <article class="qc" data-id="9.1">
     <div class="qc-h"><span class="qc-n">9.1</span><h3>Шапка, оффер, поле «Имя»</h3></div>
     <p class="qc-d"><b>Нужно на входе:</b> скриншоты профиля + выводы 07</p>
     <div class="keybox">
@@ -1332,7 +1252,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>бери не самый красивый вариант, а тот, что держится на факте. Список недостающих фактов — отдельная ценность: это то, что стоит доказать контентом.</p></details>
   </article>
 
-    <article class="qc" data-id="9.2" data-routes="full market">
+    <article class="qc" data-id="9.2">
     <div class="qc-h"><span class="qc-n">9.2</span><h3>Актуальные истории</h3></div>
     <p class="qc-d"><b>Нужно на входе:</b> скриншоты профиля + выводы 07</p>
     <div class="keybox">
@@ -1355,7 +1275,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
     <details class="fold"><summary>решение по ответу</summary><p>порядок важнее набора. Первым слева ставится то, что закрывает вопрос нового человека, а не то, что тебе дороже.</p></details>
   </article>
 
-    <article class="qc" data-id="9.3" data-routes="full market">
+    <article class="qc" data-id="9.3">
     <div class="qc-h"><span class="qc-n">9.3</span><h3>Закрепленные публикации</h3></div>
     <p class="qc-d"><b>Нужно на входе:</b> скриншоты профиля + выводы 07</p>
     <div class="keybox">
@@ -1385,7 +1305,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <section class="grp" data-grp="10">
     <div class="grp-h"><span class="grp-n">10</span><h3>Сборка отчета</h3><span class="grp-c">1</span></div>
     <div class="grp-b">
-    <article class="qc" data-id="10" data-routes="market">
+    <article class="qc" data-id="10">
     <div class="qc-h"><span class="qc-n">10</span><h3>Сборка отчета</h3></div>
     <p class="qc-d"><b>Нужно на входе:</b> выводы всех разборов</p>
     <div class="keybox">
@@ -1416,7 +1336,7 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
   <section class="grp" data-grp="11">
     <div class="grp-h"><span class="grp-n">11</span><h3>План на 14 дней</h3><span class="grp-c">1</span></div>
     <div class="grp-b">
-    <article class="qc" data-id="11" data-routes="market">
+    <article class="qc" data-id="11">
     <div class="qc-h"><span class="qc-n">11</span><h3>План на 14 дней</h3></div>
     <p class="qc-d"><b>Нужно на входе:</b> отчет из раздела 10</p>
     <div class="keybox">
@@ -1435,17 +1355,17 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
 на неделю: если проверять все сразу, результат нельзя будет
 приписать ни к чему.</pre>
   </div>
-    <details class="fold"><summary>решение по ответу</summary><p>прочерки не признак плохого плана. Это места, где данных пока не хватает, и через две недели новая выгрузка их закроет.</p></details>
+    <details class="fold"><summary>решение по ответу</summary><p>прочерки — не признак плохого плана. Это места, где данных пока не хватает, и через две недели новая выгрузка их закроет.</p></details>
   </article>
     </div>
   </section>
  </div>
 </section>
 
-<section class="chapter chapter--paper-2" id="services" data-n="09" data-title="Где этот путь заканчивается">
+<section class="chapter chapter--paper-2" id="services" data-n="07" data-title="Где этот путь заканчивается">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>09</span> Дальше</span>
+    <span class="section-label"><span>07</span> Дальше</span>
     <h2>Где этот путь <span class="fancy">заканчивается</span></h2>
   </div>
 <p>Все, что выше, работает на цифрах и на тексте подписей. Есть вещи, до которых так не дотянуться:</p>
@@ -1470,13 +1390,13 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
  </div>
 </section>
 
-<section class="chapter chapter--paper" id="final" data-n="10" data-title="Что дальше">
+<section class="chapter chapter--paper" id="final" data-n="08" data-title="Что дальше">
  <div class="wrap">
   <div class="shead">
-    <span class="section-label"><span>10</span> Финал</span>
+    <span class="section-label"><span>08</span> Финал</span>
     <h2>Что дальше</h2>
   </div>
-<p>Начни с быстрого маршрута: подготовка, рабочее место, промпт-ноль и 3 разбора. Через час у тебя будет ответ, почему упали охваты и какой формат держит внимание. Остальное можно добрать вечером.</p>
+<p>Начни с малого: подготовка, рабочее место, промпт-ноль и 3 разбора. Через час у тебя будет ответ, почему упали охваты и какой формат держит внимание. Остальное можно добрать вечером.</p>
 
   <div class="cta">
     <span class="eyebrow">что дальше?</span>
@@ -1580,41 +1500,6 @@ details.fold p{margin:10px 0 0;font-size:15px;color:var(--ink-body)}
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, fallback);
       } else { fallback(); }
-    });
-  });
-
-  /* фильтр каталога по маршруту */
-  var chips = document.querySelectorAll('.chip');
-  var cards = document.querySelectorAll('.qc');
-  var groups = document.querySelectorAll('.grp');
-  var catcount = document.getElementById('catcount');
-
-  function applyFilter(route){
-    var shown = 0;
-    cards.forEach(function(c){
-      var ok = route === 'all' || c.dataset.routes.split(' ').indexOf(route) > -1;
-      c.hidden = !ok;
-      if (ok) shown++;
-    });
-    groups.forEach(function(g){
-      var any = g.querySelectorAll('.qc:not([hidden])').length;
-      g.hidden = any === 0;
-      var c = g.querySelector('.grp-c');
-      if (c) c.textContent = any;
-    });
-    if (catcount) catcount.textContent = 'показано ' + shown + ' из ' + cards.length;
-    chips.forEach(function(ch){ ch.classList.toggle('on', ch.dataset.filter === route); });
-  }
-
-  chips.forEach(function(ch){
-    ch.addEventListener('click', function(){ applyFilter(ch.dataset.filter); });
-  });
-
-  document.querySelectorAll('[data-route-go]').forEach(function(b){
-    b.addEventListener('click', function(){
-      applyFilter(b.dataset.routeGo);
-      var cat = document.getElementById('catalog');
-      if (cat && cat.scrollIntoView) cat.scrollIntoView({behavior:'smooth'});
     });
   });
 
