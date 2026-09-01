@@ -10,7 +10,7 @@ const check = (condition, message) => {
 const cardIds = [...html.matchAll(/<article class="qc" data-id="([^"]+)">/g)]
   .map((match) => match[1]);
 
-check(cardIds.length === 15, `ожидалось 15 карточек, найдено ${cardIds.length}`);
+check(cardIds.length === 11, `ожидалось 11 карточек, найдено ${cardIds.length}`);
 check(new Set(cardIds).size === cardIds.length, 'data-id карточек должны быть уникальными');
 
 for (const groupId of ['07', '08', '09', '10']) {
@@ -20,11 +20,11 @@ for (const groupId of ['07', '08', '09', '10']) {
   );
 }
 
-const fifteenMentions = html.match(/15 разбор/g) ?? [];
-check(fifteenMentions.length >= 5, 'счётчик «15 разборов» обновлён не во всех ключевых местах');
+const elevenMentions = html.match(/11 разбор/g) ?? [];
+check(elevenMentions.length >= 5, 'счётчик «11 разборов» обновлён не во всех ключевых местах');
 
-const oldCounts = html.match(/11 разбор/g) ?? [];
-check(oldCounts.length === 0, 'в странице остались пользовательские упоминания «11 разборов»');
+const oldCounts = html.match(/15 разбор/g) ?? [];
+check(oldCounts.length === 0, 'в странице остались пользовательские упоминания «15 разборов»');
 
 const competitorGroup = html.match(
   /<section class="grp" data-grp="09">([\s\S]*?)<section class="grp" data-grp="10">/,
@@ -42,19 +42,15 @@ for (const forbidden of [
 }
 
 const requiredTitles = [
-  'Радар перемен',
-  'Анатомия роста и падения',
-  'Система или вспышка',
-  'Скрытые победители и роли контента',
-  'Матрица «тема × формат × цель»',
-  'Жизненный цикл рубрик',
-  'Путь до подписки и разрыв обещания профиля',
-  'Диагностика Reels без просмотра видео',
-  'Карта внимания в Stories',
+  'Карта главных узких мест',
+  'Профиль, который не конвертирует в подписку',
+  'В какую аудиторию бить',
   'Голос аудитории и карта спроса',
-  'Честный бенчмарк конкурентов',
+  'Почему контент смотрят, но не подписываются',
+  'Что перестать публиковать, а что масштабировать',
+  'Лучшие публикации конкурентов и что из них можно забрать',
+  'Что аудитория пишет конкурентам',
   'Радар тем и перенасыщения ниши',
-  'Стратегические модели конкурентов и позиция блога',
   'Три стратегии роста',
   'Лаборатория гипотез и план экспериментов',
 ];
@@ -63,10 +59,29 @@ for (const title of requiredTitles) {
   check(html.includes(`<h3>${title}</h3>`), `отсутствует карточка «${title}»`);
 }
 
+const cardBodies = [...html.matchAll(
+  /<article class="qc" data-id="[^"]+">([\s\S]*?)<\/article>/g,
+)].map((match) => match[1]);
+
+for (const [index, body] of cardBodies.entries()) {
+  for (const requiredSection of [
+    'ГЛАВНЫЙ ВЫВОД',
+    'УЗКИЕ МЕСТА',
+    'ЧТО ИЗМЕНИТЬ',
+    'ГОТОВЫЕ МАТЕРИАЛЫ',
+    'ГИПОТЕЗЫ И ПРОВЕРКА',
+  ]) {
+    check(
+      body.includes(requiredSection),
+      `в карточке ${cardIds[index]} отсутствует практический раздел «${requiredSection}»`,
+    );
+  }
+}
+
 if (failures.length) {
   console.error('Проверка гайда не пройдена:');
   for (const failure of failures) console.error(`- ${failure}`);
   process.exit(1);
 }
 
-console.log('Проверка гайда пройдена: 15 карточек, 4 группы, счётчики и ограничения согласованы.');
+console.log('Проверка гайда пройдена: 11 прикладных карточек, 4 группы и практические результаты согласованы.');
