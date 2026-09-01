@@ -7,8 +7,9 @@ const check = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
-const cardIds = [...html.matchAll(/<article class="qc(?: qc--recommended)?" data-id="([^"]+)">/g)]
-  .map((match) => match[1]);
+const cardTags = [...html.matchAll(/<article class="qc(?: qc--recommended)?"[^>]*>/g)]
+  .map((match) => match[0]);
+const cardIds = cardTags.map((tag) => tag.match(/data-id="([^"]+)"/)?.[1]).filter(Boolean);
 
 check(cardIds.length === 11, `ожидалось 11 карточек, найдено ${cardIds.length}`);
 check(new Set(cardIds).size === cardIds.length, 'data-id карточек должны быть уникальными');
@@ -30,7 +31,10 @@ for (const groupId of ['01', '02', '03', '04']) {
 
 check(html.includes('class="catalog-nav"'), 'в начале каталога отсутствует компактная навигация');
 check(html.includes('class="catalog-start"'), 'в каталоге отсутствует рекомендуемый старт');
-check(html.includes('class="qc qc--recommended" data-id="01"'), 'первый разбор не выделен как рекомендуемый');
+check(
+  cardTags[0]?.includes('class="qc qc--recommended"') && cardTags[0]?.includes('data-id="01"'),
+  'первый разбор не выделен как рекомендуемый',
+);
 
 const topLevelSections = [
   ['top', '01'],
@@ -90,7 +94,7 @@ for (const title of requiredTitles) {
 }
 
 const cardBodies = [...html.matchAll(
-  /<article class="qc(?: qc--recommended)?" data-id="[^"]+">([\s\S]*?)<\/article>/g,
+  /<article class="qc(?: qc--recommended)?"[^>]*>([\s\S]*?)<\/article>/g,
 )].map((match) => match[1]);
 
 for (const [index, body] of cardBodies.entries()) {
